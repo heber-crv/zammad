@@ -60,10 +60,8 @@ gem 'uglifier'
 
 gem 'autoprefixer-rails'
 
-# asset handling - javascript execution for e.g. linux
+# asset handling - depends on preinstalled nodejs
 gem 'execjs'
-gem 'libv8'
-gem 'mini_racer'
 
 # authentication - provider
 gem 'doorkeeper'
