@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # core - base
 ruby '2.6.6'
-gem 'rails', '5.2.4.5'
+gem 'rails', '5.2.4.6'
 
 # core - rails additions
 gem 'activerecord-import'
@@ -60,8 +60,13 @@ gem 'uglifier'
 
 gem 'autoprefixer-rails'
 
-# asset handling - depends on preinstalled nodejs
+# asset handling - javascript execution for e.g. linux
 gem 'execjs'
+
+group :mini_racer, optional: true do
+  gem 'libv8'
+  gem 'mini_racer'
+end
 
 # authentication - provider
 gem 'doorkeeper'
