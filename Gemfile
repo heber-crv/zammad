@@ -63,6 +63,11 @@ gem 'autoprefixer-rails'
 # asset handling - javascript execution for e.g. linux
 gem 'execjs'
 
+# By default, Zammad uses an installed node.js binary to process JavaScript assets.
+#
+# If that fails, the mini_racer gem can be installed via `bundle install --with mini_racer`
+#   so that no external node.js is required to process the assets.
+# Please note that this deprecated fallback option will be removed in a future release of Zammad.
 group :mini_racer, optional: true do
   gem 'libv8'
   gem 'mini_racer'
