@@ -66,6 +66,7 @@ jobs:
       with:
         manifests: |
           deployment.yml
+          services.yml
         images: |
           ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }}
         imagepullsecrets: |
