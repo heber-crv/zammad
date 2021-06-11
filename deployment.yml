@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zammad-deployment
+  labels:
+    app: zammad
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: zammad
+  template:
+    metadata:
+      labels:
+        app: zammad
+    spec:
+      containers:
+      - name: zammad
+        image: zammad.azurecr.io/zammad:7ccc66d7e407f4108b2c7dc77f9659b1dddc911a
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zammad-deployment
+spec:
+  ports:
+  type: LoadBalancer
+  - port: 80
+  - port: 8080
+  - port: 5432
+  selector:
+    app: zammad-deployment
