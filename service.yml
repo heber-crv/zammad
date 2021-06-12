@@ -5,11 +5,14 @@ metadata:
   name: zammad-deployment
 spec:
   ports:
-    - port: 80
+    - name: http
+      port: 80
       targetPort: 80
-    - port: 8080
+    - name: test
+      port: 8080
       targetPort: 8080
-    - port: 5432
+    - name: sql
+      port: 5432
       targetPort: 5432
   type: LoadBalancer
   selector:
