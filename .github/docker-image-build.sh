@@ -5,9 +5,9 @@
 set -o errexit
 set -o pipefail
 
-DOCKER_REGISTRY="index.docker.io"
+#DOCKER_REGISTRY="index.docker.io"
 REPO_ROOT="$(git rev-parse --show-toplevel)"
-ZAMMAD_VERSION="$(git describe --tags | sed -e 's/-[a-z0-9]\{8,\}.*//g')"
+#ZAMMAD_VERSION="$(git describe --tags | sed -e 's/-[a-z0-9]\{8,\}.*//g')"
 
 REGISTRY_NAME="zammad"
 APP_NAME="zammad-test"
