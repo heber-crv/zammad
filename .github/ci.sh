@@ -35,8 +35,8 @@ bundle install --without "${INSTALL_OPTION}"
 
 # unit tests
 #bundle exec rubocop
-bundle exec rake zammad:db:init
-#bundle exec rspec -t ~type:system -t ~searchindex
+#bundle exec rake zammad:db:init
+bundle exec rspec -t ~type:system -t ~searchindex
 #bundle exec rake zammad:db:reset
 #bundle exec rake test:units
 #ruby -I test/ test/integration/object_manager_test.rb
