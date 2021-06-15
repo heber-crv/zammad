@@ -31,6 +31,8 @@ jobs:
       run: git clone https://github.com/heber-crv/zammad-docker.git
 #    - name: Changing to repo directory
 #      run: cd zammad-docker
+    - name: Showing entrypoint
+      run: cat zammad-docker/docker-entrypoint.sh
 
     # Container build and push to a Azure Container Registry (ACR)
     - name: Container build and push to a Azure Container Registry (ACR)
