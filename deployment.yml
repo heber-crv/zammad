@@ -21,7 +21,7 @@ spec:
         ports:
         - containerPort: 80
         startupProbe:
-          failureThreshold: 150
+          failureThreshold: 300
           #successThreshold: 1
           periodSeconds: 10
           #initialDelaySeconds: 150
