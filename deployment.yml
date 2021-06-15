@@ -25,7 +25,6 @@ spec:
           #successThreshold: 1
           periodSeconds: 10
           #initialDelaySeconds: 150
-          exec:
-            command:
-            - cat
-            - /etc/nginx/nginx.conf
+          tcpSocket:
+            host:
+            port: 80
