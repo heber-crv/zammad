@@ -21,8 +21,9 @@ spec:
         ports:
         - containerPort: 80
         startupProbe:
-          failureThreshold: 60
-          periodSeconds: 10
+          #failureThreshold: 60
+          #periodSeconds: 10
+          initialDelaySeconds: 150
           exec:
             command:
             - cat
