@@ -20,3 +20,4 @@ spec:
         image: zammad.azurecr.io/zammad:7ccc66d7e407f4108b2c7dc77f9659b1dddc911a
         ports:
         - containerPort: 80
+      restartPolicy: Never
