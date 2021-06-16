@@ -13,7 +13,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    #- uses: actions/checkout@main
     - uses: actions/checkout@master
     
     # Connect to Azure Container Registry (ACR)
@@ -29,8 +28,6 @@ jobs:
       run: git fetch --prune --unshallow
     - name: Cloning Dockerfile repo
       run: git clone -b fail-fix https://github.com/heber-crv/zammad-docker.git
-#    - name: Changing to repo directory
-#      run: cd zammad-docker
     - name: Showing entrypoint
       run: cat zammad-docker/docker-entrypoint.sh
 
@@ -49,10 +46,6 @@ jobs:
         cluster-name: ${{ env.CLUSTER_NAME }}
         resource-group: ${{ env.CLUSTER_RESOURCE_GROUP }}
    
-    # Create namespace if doesn't exist
-    #- run: |
-        #kubectl create namespace ${{ env.NAMESPACE }} --dry-run -o json | kubectl apply -f -
-    
     # Create image pull secret for ACR
     - name: Create image pull secret for ACR
       uses: azure/k8s-create-secret@v1
