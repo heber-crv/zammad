@@ -1,4 +1,4 @@
-on: [push,workflow_dispatch]
+on: push
 
 # Environment variables available to all jobs and steps in this workflow
 env:
@@ -27,9 +27,7 @@ jobs:
     - name: Fetch all history for all tags and branches
       run: git fetch --prune --unshallow
     - name: Cloning Dockerfile repo
-      run: git clone -b fail-fix https://github.com/heber-crv/zammad-docker.git
-    - name: Showing entrypoint
-      run: cat zammad-docker/docker-entrypoint.sh
+      run: git clone https://github.com/heber-crv/zammad-docker.git
 
     # Container build and push to a Azure Container Registry (ACR)
     - name: Container build and push to a Azure Container Registry (ACR)
