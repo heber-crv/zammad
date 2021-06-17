@@ -53,7 +53,7 @@ jobs:
         container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
         secret-name: ${{ env.SECRET }}
         namespace: ${{ env.NAMESPACE }}
-        force: true
+#        force: true
     
     - name: Deploying image to AKS cluster
       uses: azure/k8s-deploy@v1
