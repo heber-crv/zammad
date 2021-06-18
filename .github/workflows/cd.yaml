@@ -55,6 +55,14 @@ jobs:
         namespace: ${{ env.NAMESPACE }}
         force: true
     
+    - name: Getting public IP from Azure resource and inserting it into service.yml
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          cd ..
+          chmod +x service.sh
+          ./service.sh
+
     - name: Deploying image to AKS cluster
       uses: azure/k8s-deploy@v1
       with:
