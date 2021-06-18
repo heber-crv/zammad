@@ -8,6 +8,7 @@ env:
   NAMESPACE: default
   SECRET: zpswd
   APP_NAME: zammad
+  PUBLIC_IP: 
   
 jobs:
   build:
@@ -64,9 +65,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          cd ..
-          chmod +x service.sh
-          ./service.sh
+          PUBLIC_IP=$(az network public-ip show -g $CLUSTER_RESOURCE_GROUP -n loadBalancer --query "ipAddress" -o tsv)
 
     - name: Deploying image to AKS cluster
       uses: azure/k8s-deploy@v1
