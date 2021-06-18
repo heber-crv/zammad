@@ -65,12 +65,13 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          PUBLIC_IP=$(az network public-ip show -g $CLUSTER_RESOURCE_GROUP -n loadBalancer --query "ipAddress" -o tsv)
+          az network public-ip show -g $CLUSTER_RESOURCE_GROUP -n loadBalancer --query "ipAddress" -o tsv >> $PUBLIC_IP
 
     - name: Adding public IP to service.yml
       run: |
         chmod +x service.sh
         ./service.sh
+
     - name: Deploying image to AKS cluster
       uses: azure/k8s-deploy@v1
       with:
