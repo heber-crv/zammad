@@ -16,10 +16,10 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    - name: Azure login
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+#    - name: Azure login
+#      uses: azure/login@v1
+#      with:
+#        creds: ${{ secrets.AZURE_CREDENTIALS }}
     
     # Connect to Azure Container Registry (ACR)
     - name: Connecting to Azure Container Registry
@@ -61,16 +61,16 @@ jobs:
         namespace: ${{ env.NAMESPACE }}
         force: true
     
-    - name: Getting public IP from Azure resource
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
-          az network public-ip show -g $CLUSTER_RESOURCE_GROUP -n loadBalancer --query "ipAddress" -o tsv >> "$PUBLIC_IP"
+#    - name: Getting public IP from Azure resource
+#      uses: azure/CLI@v1
+#      with:
+#        inlineScript: |
+#          az network public-ip show -g $CLUSTER_RESOURCE_GROUP -n loadBalancer --query "ipAddress" -o tsv >> "$PUBLIC_IP"
 
-    - name: Adding public IP to service.yml
-      run: |
-        chmod +x service.sh
-        ./service.sh
+#    - name: Adding public IP to service.yml
+#      run: |
+#        chmod +x service.sh
+#        ./service.sh
 
     - name: Deploying image to AKS cluster
       uses: azure/k8s-deploy@v1
