@@ -8,13 +8,12 @@ spec:
     - name: http
       port: 80
       targetPort: 80
-    - name: test
-      port: 8080
-      targetPort: 8080
-    - name: sql
-      port: 5432
-      targetPort: 5432
+#    - name: test
+#      port: 8080
+#      targetPort: 8080
+#    - name: sql
+#      port: 5432
+#      targetPort: 5432
   type: LoadBalancer
-  loadBalancerIP: 20.84.201.193
   selector:
     app: zammad
