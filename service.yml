@@ -15,6 +15,6 @@ spec:
       port: 5432
       targetPort: 5432
   type: LoadBalancer
-  loadBalancerIP: 52.141.217.31
+  loadBalancerIP: 20.84.201.193
   selector:
     app: zammad
